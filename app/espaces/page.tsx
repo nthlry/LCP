@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import ScrollChrome from '@/components/ScrollChrome';
 import SectionTitle from '@/components/SectionTitle';
+import AxonometriePlan from '@/components/AxonometriePlan';
 
 export const metadata: Metadata = {
   title: 'Les Espaces — Le Campus Paris | Bâtiment neuf, 8 niveaux, ouverture 2026',
@@ -154,17 +155,7 @@ export default function EspacesPage() {
             </p>
           </div>
 
-          <figure className="glass-card max-w-container-max mx-5 md:mx-auto rounded-3xl overflow-hidden p-4 md:p-8">
-            <img
-              src="/assets/plan-axonometrique.png"
-              alt="Vue axonométrique d'un plateau d'enseignement du Campus Paris"
-              className="w-full h-auto"
-              loading="lazy"
-            />
-            <figcaption className="mt-4 text-center font-label-sm uppercase tracking-widest text-on-surface-variant/70">
-              Vue axonométrique — plateau d&apos;enseignement type
-            </figcaption>
-          </figure>
+          <AxonometriePlan />
 
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter">
             <div className="flex flex-col gap-2">
