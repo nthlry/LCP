@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import ScrollChrome from '@/components/ScrollChrome';
+import SectionTitle from '@/components/SectionTitle';
 
 export const metadata: Metadata = {
   title: 'Informations pratiques — Le Campus Paris | Accès, transports, localisation',
@@ -83,7 +84,7 @@ export default function InfosPratiquesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-stretch">
             <div className="glass-card rounded-2xl p-xl flex flex-col justify-center reveal-left">
               <span className="font-label-sm uppercase tracking-widest text-secondary mb-2 block">Adresse</span>
-              <h2 className="font-headline-lg text-headline-lg mb-4">Le Campus Paris</h2>
+              <SectionTitle as="h2" tone="light" className="text-headline-lg mb-4" lead="Le Campus" rest="Paris" />
               <p className="font-body-lg text-on-surface-variant mb-md">
                 6-8 rue des 3 Fontanot
                 <br />
@@ -109,7 +110,7 @@ export default function InfosPratiquesPage() {
             <div className="rounded-2xl overflow-hidden border border-outline-variant min-h-[340px] shadow-sm reveal-right">
               <iframe
                 title="Localisation du Campus Paris — 6-8 rue des 3 Fontanot, Nanterre"
-                src="https://www.google.com/maps?q=6-8+rue+des+3+Fontanot,+92000+Nanterre&output=embed"
+                src="https://www.google.com/maps?q=6-8+rue+des+3+Fontanot,+92000+Nanterre&ll=48.8566,2.3522&z=11&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: 340 }}
@@ -126,8 +127,7 @@ export default function InfosPratiquesPage() {
           <div className="max-w-container-max mx-auto">
             <div className="mb-xl">
               <span className="font-label-sm uppercase tracking-widest text-secondary mb-2 block">Accessibilité</span>
-              <h2 className="font-headline-xl text-headline-xl">Venir au Campus</h2>
-              <div className="w-24 h-1 bg-secondary rounded-full mt-3"></div>
+              <SectionTitle as="h2" tone="light" className="text-headline-xl" lead="Venir" rest="au Campus" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter" data-stagger="up">
               <div className="glass-card rounded-2xl p-xl">
@@ -190,8 +190,7 @@ export default function InfosPratiquesPage() {
         <section className="py-2xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="mb-xl">
             <span className="font-label-sm uppercase tracking-widest text-secondary mb-2 block">L&apos;environnement</span>
-            <h2 className="font-headline-xl text-headline-xl">Les alentours du site</h2>
-            <div className="w-24 h-1 bg-secondary rounded-full mt-3"></div>
+            <SectionTitle as="h2" tone="light" className="text-headline-xl" lead="Les alentours" rest="du site" />
             <p className="font-body-md text-on-surface-variant max-w-[42rem] mt-4">
               À deux pas du campus, le quartier offre une vie de quartier dense : restaurants, cafés, brasseries et commerces de
               proximité, dans un environnement vivant proche de La Défense.
@@ -255,9 +254,9 @@ export default function InfosPratiquesPage() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-3xl px-margin-mobile md:px-margin-desktop bg-on-surface text-surface-bright">
+        <section id="contact" className="py-3xl px-margin-mobile md:px-margin-desktop bg-[#213145] text-white">
           <div className="max-w-container-max mx-auto text-center">
-            <h2 className="font-headline-xl text-headline-xl mb-md">Une question ? Réservons votre visite.</h2>
+            <SectionTitle as="h2" tone="dark" className="text-headline-xl mb-md" lead="Une question ?" rest="Réservons votre visite" />
             <p className="font-body-lg opacity-80 mb-xl max-w-[42rem] mx-auto">
               Notre équipe vous accompagne pour toute demande de renseignements ou pour organiser une visite privée du campus.
             </p>
@@ -272,7 +271,7 @@ export default function InfosPratiquesPage() {
           </div>
         </section>
       </main>
-      <Footer variant="site" />
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import ScrollChrome from '@/components/ScrollChrome';
+import SectionTitle from '@/components/SectionTitle';
 
 export const metadata: Metadata = {
   title: 'Les Espaces — Le Campus Paris | Bâtiment neuf, 8 niveaux, ouverture 2026',
@@ -92,9 +93,7 @@ export default function EspacesPage() {
             <div className="glass-card rounded-2xl overflow-hidden">
               <div className="p-8 md:p-12 space-y-12">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-xl">
-                  <h2 className="text-headline-lg font-bold uppercase tracking-tight">
-                    LES CHIFFRES <span className="text-secondary">CLÉS.</span>
-                  </h2>
+                  <SectionTitle as="h2" tone="light" className="text-headline-lg" lead="Les chiffres" rest="clés" />
                   <div className="h-1 w-12 bg-secondary/20 rounded-full hidden md:block"></div>
                 </div>
 
@@ -130,9 +129,9 @@ export default function EspacesPage() {
         </section>
 
         {/* Descriptive Content */}
-        <section className="glass-card py-2xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto rounded-3xl my-xl">
+        <section className="glass-card py-2xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-5 md:mx-auto rounded-3xl my-xl">
           <div className="max-w-4xl mx-auto text-center space-y-md">
-            <h2 className="font-headline-xl text-headline-xl text-primary">Conçu pour l&apos;excellence pédagogique</h2>
+            <SectionTitle as="h2" tone="light" className="text-headline-xl" lead="Conçu" rest="pour l'excellence pédagogique" />
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
               Développé sur 8 niveaux et totalisant 8 143 m², Le Campus intègre au rez-de-chaussée un socle serviciel de 850 m²
               comprenant un hall d&apos;accueil, une cafétéria et une brasserie attenante. Le R+1, entièrement dédié aux services,
@@ -143,11 +142,58 @@ export default function EspacesPage() {
           </div>
         </section>
 
+        {/* Plan axonométrique d'un plateau type */}
+        <section className="py-2xl my-xl space-y-xl" id="plan-plateau">
+          <div className="glass-blue text-white max-w-container-max mx-5 md:mx-auto px-margin-mobile md:px-margin-desktop py-2xl rounded-3xl">
+            <SectionTitle as="h3" tone="blue" className="text-headline-lg mb-6" lead="Un plateau" rest="pensé dans le moindre détail" />
+            <p className="font-body-md leading-relaxed opacity-90">
+              Chaque plateau d&apos;enseignement d&apos;environ 1 000 m² est conçu comme un écosystème complet et modulable. Salles
+              de cours de tailles variées, gradins, espaces de travail collaboratif et îlots informels s&apos;articulent autour
+              d&apos;une circulation fluide et lumineuse. Une trame ouverte qui laisse à chaque établissement la liberté de
+              composer ses espaces au gré de ses formats pédagogiques — du cours magistral au travail en petits groupes.
+            </p>
+          </div>
+
+          <figure className="glass-card max-w-container-max mx-5 md:mx-auto rounded-3xl overflow-hidden p-4 md:p-8">
+            <img
+              src="/assets/plan-axonometrique.png"
+              alt="Vue axonométrique d'un plateau d'enseignement du Campus Paris"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+            <figcaption className="mt-4 text-center font-label-sm uppercase tracking-widest text-on-surface-variant/70">
+              Vue axonométrique — plateau d&apos;enseignement type
+            </figcaption>
+          </figure>
+
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter">
+            <div className="flex flex-col gap-2">
+              <span className="material-symbols-outlined text-secondary text-3xl">grid_view</span>
+              <h4 className="font-label-md uppercase tracking-tight">Salles modulables</h4>
+              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des configurations adaptables, du petit atelier au grand amphithéâtre.</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="material-symbols-outlined text-secondary text-3xl">groups</span>
+              <h4 className="font-label-md uppercase tracking-tight">Espaces collaboratifs</h4>
+              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des zones ouvertes pour le travail en équipe et les échanges informels.</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="material-symbols-outlined text-secondary text-3xl">stairs</span>
+              <h4 className="font-label-md uppercase tracking-tight">Gradins &amp; amphis</h4>
+              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des espaces gradinés pour conférences, projections et grands rassemblements.</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="material-symbols-outlined text-secondary text-3xl">deck</span>
+              <h4 className="font-label-md uppercase tracking-tight">Détente &amp; terrasses</h4>
+              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des respirations et un accès direct aux terrasses végétalisées.</p>
+            </div>
+          </div>
+        </section>
+
         {/* Level Breakdown Bento Grid */}
         <section className="py-2xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="niveaux">
           <div className="mb-xl">
-            <h3 className="font-headline-lg text-headline-lg mb-2">Structure des niveaux</h3>
-            <div className="w-24 h-1 bg-secondary rounded-full"></div>
+            <SectionTitle as="h3" tone="light" className="text-headline-lg" lead="Structure" rest="des niveaux" />
           </div>
 
           <div className="space-y-gutter">
@@ -178,27 +224,31 @@ export default function EspacesPage() {
 
             {/* R+1 + R+2-7 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-              <div id="niveau-r1" className="group glass-blue text-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300">
+              <div id="niveau-r1" className="glass-card group rounded-2xl overflow-hidden flex flex-col">
                 <div className="overflow-hidden aspect-video">
-                  <img src="/assets/premier-etage.webp" alt="Premier Étage Interior" className="w-full h-full object-cover" />
+                  <img
+                    src="/assets/premier-etage.webp"
+                    alt="Premier Étage Interior"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-xl flex flex-col flex-1">
-                  <span className="font-label-sm uppercase tracking-widest opacity-80 mb-1 block">Niveau 1</span>
-                  <h4 className="font-title-lg text-title-lg mb-3 text-surface-bright">Premier Étage mutualisé</h4>
-                  <p className="font-body-sm opacity-90 leading-relaxed mb-md">
+                  <span className="font-label-sm uppercase tracking-widest text-secondary mb-1 block">Niveau 1</span>
+                  <h4 className="font-title-lg text-title-lg mb-3">Premier Étage mutualisé</h4>
+                  <p className="font-body-sm text-on-surface-variant leading-relaxed mb-md">
                     Entièrement dédié aux services : business center, auditorium et espace wellness.
                   </p>
                   <div className="space-y-2 mt-auto">
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[20px]">fitness_center</span>{' '}
-                      <span className="font-label-md">Espace wellness</span>
+                    <div className="flex items-center gap-2 text-on-surface-variant font-label-md">
+                      <span className="material-symbols-outlined text-[20px] text-secondary">fitness_center</span>{' '}
+                      <span>Espace wellness</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[20px]">theater_comedy</span>{' '}
-                      <span className="font-label-md">Auditorium</span>
+                    <div className="flex items-center gap-2 text-on-surface-variant font-label-md">
+                      <span className="material-symbols-outlined text-[20px] text-secondary">theater_comedy</span>{' '}
+                      <span>Auditorium</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[20px]">hub</span> <span className="font-label-md">Business Center</span>
+                    <div className="flex items-center gap-2 text-on-surface-variant font-label-md">
+                      <span className="material-symbols-outlined text-[20px] text-secondary">hub</span> <span>Business Center</span>
                     </div>
                   </div>
                 </div>
@@ -265,15 +315,13 @@ export default function EspacesPage() {
 
         {/* Certifications & Performance */}
         <section
-          className="py-3xl px-margin-mobile md:px-margin-desktop bg-on-surface text-surface-bright overflow-hidden relative"
+          className="py-3xl px-margin-mobile md:px-margin-desktop bg-[#213145] text-white overflow-hidden relative"
           id="certifications"
         >
           <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/5 -skew-x-12 transform translate-x-1/2"></div>
           <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2xl relative z-10">
             <div className="space-y-xl">
-              <h2 className="font-headline-xl text-headline-xl">
-                Une performance environnementale <span className="text-secondary">certifiée</span>.
-              </h2>
+              <SectionTitle as="h2" tone="dark" className="text-headline-xl" lead="Une performance" rest="environnementale certifiée" />
               <p className="font-body-lg opacity-80">
                 L&apos;immeuble privilégie le confort d&apos;usage avec des volumes naturellement lumineux. Le projet s&apos;inscrit dans
                 une démarche de haute qualité environnementale.
@@ -339,7 +387,7 @@ export default function EspacesPage() {
 
         {/* Final CTA / Contact */}
         <section className="py-3xl px-margin-mobile md:px-margin-desktop text-center max-w-container-max mx-auto" id="contact">
-          <h2 className="font-headline-xl text-headline-xl mb-md">Prêt à découvrir votre futur campus ?</h2>
+          <SectionTitle as="h2" tone="light" className="text-headline-xl mb-md" lead="Prêt" rest="à découvrir votre futur campus" end=" ?" />
           <p className="font-body-lg text-on-surface-variant mb-xl max-w-[42rem] mx-auto">
             Nos experts vous accompagnent dans la découverte de ces espaces innovants conçus pour le futur de la formation.
           </p>
@@ -358,10 +406,18 @@ export default function EspacesPage() {
             >
               Télécharger la brochure
             </a>
+            <a
+              href="/assets/plans-techniques.pdf"
+              target="_blank"
+              rel="noopener"
+              className="magnetic border-2 border-outline text-on-surface px-8 py-4 rounded-full font-title-lg hover:bg-surface-container transition-all"
+            >
+              Plans techniques
+            </a>
           </div>
         </section>
       </main>
-      <Footer variant="site" />
+      <Footer />
     </>
   );
 }

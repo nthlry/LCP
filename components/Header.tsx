@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header className="docked fixed top-0 inset-x-0 z-50 px-3 md:px-6 pt-3 md:pt-4">
       <nav className="nav-shell liquid-glass flex justify-between items-center w-full px-5 md:px-6 py-2.5 max-w-container-max mx-auto rounded-full">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 px-1.5 py-1">
           <Image alt="Le Campus Paris Logo" className="h-9 w-auto" src="/assets/logo.png" width={140} height={36} priority />
         </div>
         <div className="hidden md:flex gap-12 nav-link uppercase">

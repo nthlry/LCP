@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import ScrollChrome from '@/components/ScrollChrome';
 import HeroParallax from '@/components/HeroParallax';
+import SectionTitle from '@/components/SectionTitle';
 
 export const metadata: Metadata = {
   title: "Le Campus Paris — Campus opéré nouvelle génération pour l'enseignement",
@@ -115,8 +116,7 @@ export default function ConceptPage() {
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
               <div className="lg:col-span-4 lg:sticky lg:top-28">
-                <h2 className="font-display-lg text-headline-lg uppercase tracking-tighter mb-4 text-accent-blue">LE CONCEPT</h2>
-                <div className="w-16 h-1 bg-accent-blue mb-8"></div>
+                <SectionTitle as="h2" tone="light" className="text-headline-lg mb-8" lead="Le" rest="concept" />
                 <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                   L&apos;excellence opérationnelle au service de l&apos;éducation.
                 </p>
@@ -134,9 +134,13 @@ export default function ConceptPage() {
                 </div>
 
                 <div className="mb-stack-lg space-y-12">
-                  <h3 className="font-headline-lg text-headline-lg uppercase tracking-tight text-primary reveal-left">
-                    Le campus devient un levier de croissance, d&apos;image et d&apos;expérience
-                  </h3>
+                  <SectionTitle
+                    as="h3"
+                    tone="light"
+                    className="text-headline-lg reveal-left"
+                    lead="Le campus"
+                    rest="devient un levier de croissance, d'image et d'expérience"
+                  />
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter" data-stagger="up">
                     <div className="space-y-4">
                       <div className="text-accent-blue font-black text-4xl tracking-tighter">01.</div>
@@ -167,7 +171,7 @@ export default function ConceptPage() {
                 </div>
 
                 <div className="border-l-4 border-accent-blue pl-8 py-4 mt-stack-lg reveal-up">
-                  <h3 className="font-headline-lg text-headline-lg mb-6 leading-tight uppercase">LE MONDE DE L&apos;ÉDUCATION A CHANGÉ.</h3>
+                  <SectionTitle as="h3" tone="light" className="text-headline-lg mb-6 leading-tight" lead="Le monde" rest="de l'éducation a changé" />
                   <p className="font-body-lg text-body-lg text-on-surface-variant mb-4">
                     Il évolue désormais plus vite que les modèles traditionnels d&apos;apprentissage. L&apos;intelligence artificielle, les
                     nouvelles technologies et les transformations des métiers redéfinissent les compétences en permanence. Ce que nous
@@ -247,7 +251,7 @@ export default function ConceptPage() {
               <div className="w-full lg:w-5/12 flex flex-col justify-center">
                 <div className="p-8 border-y border-stone">
                   <span className="font-label-sm uppercase tracking-widest text-accent-blue mb-2 block">L&apos;expérience Campus</span>
-                  <h3 className="font-headline-lg text-headline-lg mb-4">Des espaces qui inspirent l&apos;excellence.</h3>
+                  <SectionTitle as="h3" tone="light" className="text-headline-lg mb-4" lead="Des espaces" rest="qui inspirent l'excellence" />
                   <p className="font-body-md text-on-surface-variant mb-6">
                     Chaque détail est pensé pour minimiser les distractions. De l&apos;acoustique traitée aux mobiliers ergonomiques, nous
                     créons l&apos;environnement idéal pour la transmission du savoir.
@@ -263,9 +267,9 @@ export default function ConceptPage() {
         </section>
 
         {/* Simple Contact CTA */}
-        <section className="py-section-gap bg-inverse-surface" id="contact">
+        <section className="py-section-gap bg-[#213145]" id="contact">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-            <h2 className="font-headline-lg text-headline-lg text-surface-bright mb-8">Prêt à transformer votre modèle immobilier ?</h2>
+            <SectionTitle as="h2" tone="dark" className="text-headline-lg mb-8" lead="Prêt" rest="à transformer votre modèle immobilier" end=" ?" />
             <button
               className="magnetic glass-blue text-white px-12 py-5 rounded-full font-label-md hover:scale-105 transition-all"
               data-open-contact-modal=""
@@ -275,7 +279,7 @@ export default function ConceptPage() {
           </div>
         </section>
       </main>
-      <Footer variant="concept" />
+      <Footer />
     </>
   );
 }
