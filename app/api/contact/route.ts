@@ -11,6 +11,9 @@ import { NextResponse } from 'next/server';
 
 const HUBSPOT_TOKEN = process.env.HUBSPOT_PRIVATE_APP_TOKEN;
 const HUBSPOT_API = 'https://api.hubapi.com/crm/v3/objects/contacts';
+// Propriétaire HubSpot auquel sont attribués les contacts du site
+// (Hugo Poulaillon — hpoulaillon@deskeo.fr). Surchargage possible via env.
+const HUBSPOT_OWNER_ID = process.env.HUBSPOT_OWNER_ID ?? '445387662';
 
 type Body = {
   firstname?: string;
@@ -39,12 +42,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "L'e-mail est requis." }, { status: 400 });
   }
 
-  const properties = {
+  const properties: Record<string, string> = {
     firstname: (body.firstname ?? '').trim(),
     lastname: (body.lastname ?? '').trim(),
     company: (body.company ?? '').trim(),
     email,
   };
+  if (HUBSPOT_OWNER_ID) {
+    properties.hubspot_owner_id = HUBSPOT_OWNER_ID;
+  }
 
   const headers = {
     'Content-Type': 'application/json',
