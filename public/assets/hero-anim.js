@@ -224,24 +224,9 @@
      tactile et prefers-reduced-motion.
      ----------------------------------------------------------- */
   function initMagnetic() {
-    if (prefersReduced || window.matchMedia('(pointer: coarse)').matches) return;
-    var items = document.querySelectorAll('.magnetic');
-    var STRENGTH = 0.35;
-    var MAX = 10; // px de déplacement max
-
-    items.forEach(function (el) {
-      el.addEventListener('mousemove', function (e) {
-        var rect = el.getBoundingClientRect();
-        var dx = (e.clientX - (rect.left + rect.width / 2)) * STRENGTH;
-        var dy = (e.clientY - (rect.top + rect.height / 2)) * STRENGTH;
-        dx = Math.max(-MAX, Math.min(MAX, dx));
-        dy = Math.max(-MAX, Math.min(MAX, dy));
-        el.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px)';
-      });
-      el.addEventListener('mouseleave', function () {
-        el.style.transform = 'translate(0,0)';
-      });
-    });
+    // Effet « bouton magnétique » désactivé : les boutons ne suivent plus
+    // le curseur. La classe .magnetic peut rester sur les éléments sans
+    // aucun effet de déplacement.
   }
 
   /* -----------------------------------------------------------
