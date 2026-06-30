@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import ScrollChrome from '@/components/ScrollChrome';
 import SectionTitle from '@/components/SectionTitle';
-import AxonometriePlan from '@/components/AxonometriePlan';
 
 export const metadata: Metadata = {
   title: 'Les Espaces — Le Campus Paris | Bâtiment neuf, 8 niveaux, ouverture 2026',
@@ -140,44 +139,6 @@ export default function EspacesPage() {
               Les étages R+2 à R+7 sont composés de six plateaux d&apos;environ 1 000 m² dédiés à l&apos;enseignement et à la
               formation, bénéficiant d&apos;un accès à des terrasses végétalisées.
             </p>
-          </div>
-        </section>
-
-        {/* Plan axonométrique d'un plateau type */}
-        <section className="py-2xl my-xl space-y-xl" id="plan-plateau">
-          <div className="glass-blue text-white max-w-container-max mx-5 md:mx-auto px-margin-mobile md:px-margin-desktop py-2xl rounded-3xl">
-            <SectionTitle as="h3" tone="blue" className="text-headline-lg mb-6" lead="Un plateau" rest="pensé dans le moindre détail" />
-            <p className="font-body-md leading-relaxed opacity-90">
-              Chaque plateau d&apos;enseignement d&apos;environ 1 000 m² est conçu comme un écosystème complet et modulable. Salles
-              de cours de tailles variées, gradins, espaces de travail collaboratif et îlots informels s&apos;articulent autour
-              d&apos;une circulation fluide et lumineuse. Une trame ouverte qui laisse à chaque établissement la liberté de
-              composer ses espaces au gré de ses formats pédagogiques — du cours magistral au travail en petits groupes.
-            </p>
-          </div>
-
-          <AxonometriePlan />
-
-          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter">
-            <div className="flex flex-col gap-2">
-              <span className="material-symbols-outlined text-secondary text-3xl">grid_view</span>
-              <h4 className="font-label-md uppercase tracking-tight">Salles modulables</h4>
-              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des configurations adaptables, du petit atelier au grand amphithéâtre.</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="material-symbols-outlined text-secondary text-3xl">groups</span>
-              <h4 className="font-label-md uppercase tracking-tight">Espaces collaboratifs</h4>
-              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des zones ouvertes pour le travail en équipe et les échanges informels.</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="material-symbols-outlined text-secondary text-3xl">stairs</span>
-              <h4 className="font-label-md uppercase tracking-tight">Gradins &amp; amphis</h4>
-              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des espaces gradinés pour conférences, projections et grands rassemblements.</p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <span className="material-symbols-outlined text-secondary text-3xl">deck</span>
-              <h4 className="font-label-md uppercase tracking-tight">Détente &amp; terrasses</h4>
-              <p className="font-body-sm text-on-surface-variant leading-relaxed">Des respirations et un accès direct aux terrasses végétalisées.</p>
-            </div>
           </div>
         </section>
 
