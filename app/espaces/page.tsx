@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
 import ScrollChrome from '@/components/ScrollChrome';
 import SectionTitle from '@/components/SectionTitle';
+import BrochureModal from '@/components/BrochureModal';
 
 export const metadata: Metadata = {
   title: 'Les Espaces — Le Campus Paris | Bâtiment neuf, 8 niveaux, ouverture 2026',
@@ -350,25 +351,16 @@ export default function EspacesPage() {
             >
               Réserver une visite
             </button>
-            <a
-              href="/assets/brochure-le-campus-paris.pdf"
-              target="_blank"
-              rel="noopener"
+            <button
               className="magnetic border-2 border-outline text-on-surface px-8 py-4 rounded-full font-title-lg hover:bg-surface-container transition-all"
+              data-open-brochure-modal=""
             >
               Télécharger la brochure
-            </a>
-            <a
-              href="/assets/plans-techniques.pdf"
-              target="_blank"
-              rel="noopener"
-              className="magnetic border-2 border-outline text-on-surface px-8 py-4 rounded-full font-title-lg hover:bg-surface-container transition-all"
-            >
-              Plans techniques
-            </a>
+            </button>
           </div>
         </section>
       </main>
+      <BrochureModal />
       <Footer />
     </>
   );

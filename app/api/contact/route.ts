@@ -20,6 +20,7 @@ type Body = {
   lastname?: string;
   company?: string;
   email?: string;
+  phone?: string;
 };
 
 export async function POST(request: Request) {
@@ -48,6 +49,10 @@ export async function POST(request: Request) {
     company: (body.company ?? '').trim(),
     email,
   };
+  const phone = (body.phone ?? '').trim();
+  if (phone) {
+    properties.phone = phone;
+  }
   if (HUBSPOT_OWNER_ID) {
     properties.hubspot_owner_id = HUBSPOT_OWNER_ID;
   }
