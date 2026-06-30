@@ -9,9 +9,19 @@ import { useEffect, useRef, useState } from 'react';
  * la modale, sans prop-drilling — on écoute les clics au niveau du
  * document, exactement comme le faisait le script vanilla JS.
  */
+// Portal ID et Form GUID HubSpot. Ces valeurs sont publiques (elles transitent
+// côté navigateur avec la Forms API), on peut donc les coder en dur comme
+// valeurs par défaut tout en laissant la possibilité de les surcharger via
+// des variables d'environnement.
+const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID ?? '2822390';
+const HUBSPOT_FORM_GUID =
+  process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID ?? '41687bd9-54ef-47dc-bc2e-990779f260fa';
+
 export default function ContactModal() {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const firstInputRef = useRef<HTMLInputElement>(null);
 
@@ -49,9 +59,54 @@ export default function ContactModal() {
     if (e.target === overlayRef.current) setOpen(false);
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+
+    if (!HUBSPOT_PORTAL_ID || !HUBSPOT_FORM_GUID) {
+      setError("La configuration HubSpot est manquante.");
+      return;
+    }
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    // Le nouvel éditeur HubSpot rattache « Nom de l'entreprise » à l'objet
+    // Entreprise (0-2/name), les autres champs à l'objet Contact (0-1).
+    const fields = [
+      { objectTypeId: '0-1', name: 'firstname', value: String(data.get('firstname') ?? '') },
+      { objectTypeId: '0-1', name: 'lastname', value: String(data.get('lastname') ?? '') },
+      { objectTypeId: '0-2', name: 'name', value: String(data.get('company') ?? '') },
+      { objectTypeId: '0-1', name: 'email', value: String(data.get('email') ?? '') },
+    ];
+
+    setSubmitting(true);
+    try {
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields,
+            context: {
+              pageUri: typeof window !== 'undefined' ? window.location.href : undefined,
+              pageName: typeof document !== 'undefined' ? document.title : undefined,
+            },
+          }),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error(`HubSpot a répondu ${res.status}`);
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch {
+      setError("Une erreur est survenue. Merci de réessayer.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -126,11 +181,17 @@ export default function ContactModal() {
                 type="email"
               />
             </div>
+            {error && (
+              <p className="font-body-md text-sm text-red-600" role="alert">
+                {error}
+              </p>
+            )}
             <button
-              className="magnetic glass-blue w-full text-white px-6 py-3 rounded-full font-title-lg mt-2 transition-all"
+              className="magnetic glass-blue w-full text-white px-6 py-3 rounded-full font-title-lg mt-2 transition-all disabled:opacity-60"
               type="submit"
+              disabled={submitting}
             >
-              Envoyer
+              {submitting ? 'Envoi…' : 'Envoyer'}
             </button>
           </form>
         )}
