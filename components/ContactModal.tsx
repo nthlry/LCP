@@ -79,6 +79,14 @@ export default function ContactModal() {
       { objectTypeId: '0-1', name: 'email', value: String(data.get('email') ?? '') },
     ];
 
+    // Cookie de suivi HubSpot, posé par le script js.hs-scripts.com. Le
+    // transmettre relie la soumission à un vrai visiteur et évite que
+    // HubSpot la classe en spam.
+    const hutk = document.cookie
+      .split('; ')
+      .find((c) => c.startsWith('hubspotutk='))
+      ?.split('=')[1];
+
     setSubmitting(true);
     try {
       const res = await fetch(
@@ -89,6 +97,7 @@ export default function ContactModal() {
           body: JSON.stringify({
             fields,
             context: {
+              ...(hutk ? { hutk } : {}),
               pageUri: typeof window !== 'undefined' ? window.location.href : undefined,
               pageName: typeof document !== 'undefined' ? document.title : undefined,
             },
