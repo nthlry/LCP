@@ -66,6 +66,7 @@ export default function BrochureModal() {
       company: String(data.get('company') ?? ''),
       email: String(data.get('email') ?? ''),
       phone: String(data.get('phone') ?? ''),
+      sendBrochure: true,
     };
 
     setSubmitting(true);
