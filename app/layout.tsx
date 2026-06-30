@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
 import ContactModal from '@/components/ContactModal';
@@ -40,14 +39,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ContactModal />
         {children}
         <AnimLoader />
-        {/* Script de suivi HubSpot : pose le cookie « hubspotutk » qui permet
-            de relier les soumissions du formulaire à un vrai visiteur. Sans lui,
-            HubSpot classe les soumissions de la Forms API en spam. */}
-        <Script
-          id="hs-script-loader"
-          strategy="afterInteractive"
-          src="https://js.hs-scripts.com/2822390.js"
-        />
       </body>
     </html>
   );
