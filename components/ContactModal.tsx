@@ -64,6 +64,7 @@ export default function ContactModal() {
       lastname: String(data.get('lastname') ?? ''),
       company: String(data.get('company') ?? ''),
       email: String(data.get('email') ?? ''),
+      phone: String(data.get('phone') ?? ''),
     };
 
     setSubmitting(true);
@@ -157,6 +158,18 @@ export default function ContactModal() {
                 name="email"
                 required
                 type="email"
+              />
+            </div>
+            <div>
+              <label className="block font-label-sm text-on-surface-variant mb-1.5" htmlFor="contact-phone">
+                Téléphone
+              </label>
+              <input
+                className="w-full rounded-xl border border-outline-variant px-4 py-2.5 font-body-md focus:outline-none focus:ring-2 focus:ring-accent-blue/40"
+                id="contact-phone"
+                name="phone"
+                required
+                type="tel"
               />
             </div>
             {error && (
