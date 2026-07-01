@@ -23,10 +23,17 @@ import { motion, useScroll, useTransform, useSpring, useReducedMotion } from 'fr
 export default function HeroParallax({
   src,
   alt,
+  videoSrc,
   children,
 }: {
   src: string;
   alt: string;
+  /**
+   * Vidéo de fond optionnelle (autoplay, muette, en boucle). Tant que le
+   * fichier n'existe pas, l'image `src` reste affichée en poster : il suffit
+   * de déposer le fichier (ex. public/assets/hero.mp4) pour l'activer.
+   */
+  videoSrc?: string;
   children?: React.ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -42,7 +49,23 @@ export default function HeroParallax({
 
   return (
     <div ref={ref} className="hero-shrink-wrap">
-      <motion.img alt={alt} className="hero-shrink-media" src={src} style={{ y }} />
+      {videoSrc ? (
+        <motion.video
+          className="hero-shrink-media"
+          style={{ y }}
+          poster={src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label={alt}
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </motion.video>
+      ) : (
+        <motion.img alt={alt} className="hero-shrink-media" src={src} style={{ y }} />
+      )}
       {children}
     </div>
   );

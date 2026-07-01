@@ -68,7 +68,7 @@ export default function ConceptPage() {
             HERO IMMERSIF
             ============================================================ */}
         <section className="relative overflow-hidden border-b border-stone" id="hero">
-          <HeroParallax alt="Intérieur du Campus Paris" src="/assets/interieur.webp">
+          <HeroParallax alt="Intérieur du Campus Paris" src="/assets/interieur.webp" videoSrc="/assets/hero.mp4">
             <div className="hero-shrink-overlay"></div>
 
             <span
