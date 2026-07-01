@@ -25,6 +25,9 @@ export default function Footer() {
             <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/">
               Le concept
             </Link>
+            <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/pourquoi-maintenant">
+              Pourquoi maintenant
+            </Link>
             <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/espaces">
               Les espaces
             </Link>
