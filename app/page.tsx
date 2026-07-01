@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import ScrollChrome from '@/components/ScrollChrome';
 import HeroParallax from '@/components/HeroParallax';
 import SectionTitle from '@/components/SectionTitle';
+import CampusAsService from '@/components/CampusAsService';
 
 export const metadata: Metadata = {
   title: "Le Campus Paris — Campus opéré nouvelle génération pour l'enseignement",
@@ -271,6 +272,9 @@ export default function ConceptPage() {
             </div>
           </div>
         </section>
+
+        {/* Campus as a Service — infographie */}
+        <CampusAsService />
 
         {/* Visual Proof Section */}
         <section className="py-section-gap overflow-hidden bg-[#eef1fb]" id="proof">
