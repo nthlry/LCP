@@ -111,6 +111,37 @@ export default function ConceptPage() {
           </HeroParallax>
         </section>
 
+        {/* Chiffres clés — rappel */}
+        <section className="py-section-gap bg-white border-b border-stone" id="chiffres" aria-label="Chiffres clés">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-gutter items-center text-center">
+              <div className="space-y-2">
+                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-secondary leading-none">
+                  <span data-counter="2200">0</span>
+                </p>
+                <p className="font-label-md uppercase tracking-widest text-on-surface-variant">Étudiants</p>
+              </div>
+              <div className="space-y-2">
+                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-secondary leading-none">
+                  <span data-counter="8600" data-counter-suffix=" m²">0</span>
+                </p>
+                <p className="font-label-md uppercase tracking-widest text-on-surface-variant">Opérés</p>
+              </div>
+              <div className="space-y-2">
+                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-secondary leading-none">
+                  <span data-counter="400" data-counter-suffix=" m²">0</span>
+                </p>
+                <p className="font-label-md uppercase tracking-widest text-on-surface-variant">De rooftop</p>
+              </div>
+              <div className="col-span-2 lg:col-span-1">
+                <p className="font-title-lg text-title-lg leading-tight">
+                  Premier campus opéré <span className="text-secondary">de France</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Concept Section */}
         <section className="py-section-gap bg-white" id="concept">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
