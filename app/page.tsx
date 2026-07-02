@@ -156,7 +156,7 @@ export default function ConceptPage() {
               <div className="lg:col-span-8 space-y-stack-lg">
                 <div className="glass-blue text-white p-8 md:p-12 rounded-xl mb-stack-lg reveal-up">
                   <p className="font-headline-lg text-headline-lg leading-tight uppercase">
-                    Nous sommes la <span className="text-white font-black">première infrastructure entièrement opérée</span> dédiée à
+                    Nous sommes la <span className="text-white font-black">première infrastructure entièrement opérée</span>{' '}dédiée à
                     l&apos;éducation et à la formation.
                   </p>
                   <p className="mt-8 text-xl font-medium leading-relaxed opacity-90">

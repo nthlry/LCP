@@ -72,8 +72,8 @@ export default function EspacesPage() {
               <span className="text-secondary">CONFORT ET MODERNITÉ</span>
             </h1>
             <p id="hero-intro-text" className="font-body-lg text-body-lg text-on-surface-variant max-w-[36rem] notranslate" translate="no">
-              LE CAMPUS EST UN IMMEUBLE NEUF LIVRÉ EN 2026, CLASSÉ ERP TYPE R DE 1ÈRE CATÉGORIE – EISCP, CONÇU POUR ACCUEILLIR 2 200
-              PERSONNES.
+              LE CAMPUS EST UN IMMEUBLE NEUF LIVRÉ EN 2026, CLASSÉ ERP TYPE R DE 1ÈRE CATÉGORIE – EISCP, CONÇU POUR ACCUEILLIR
+              2&nbsp;200&nbsp;PERSONNES.
             </p>
             <div className="flex flex-wrap gap-md">
               <div className="flex items-center gap-2 font-label-md text-on-surface">
