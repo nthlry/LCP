@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { href: '/', label: 'Le concept' },
   { href: '/notre-constat', label: 'Notre constat' },
   { href: '/espaces', label: 'Les espaces' },
-  { href: '/infos-pratiques', label: 'Informations pratiques' },
+  { href: '/infos-pratiques', label: 'Infos pratiques' },
 ];
 
 export default function Header() {
@@ -23,10 +23,12 @@ export default function Header() {
   return (
     <header className="docked fixed top-0 inset-x-0 z-50 px-3 md:px-6 pt-3 md:pt-4">
       <nav className="nav-shell liquid-glass flex justify-between items-center w-full px-5 md:px-6 py-2.5 max-w-container-max mx-auto rounded-full">
-        <div className="flex items-center gap-4 px-1.5 py-1">
+        <div className="flex items-center gap-4 px-1.5 py-1 shrink-0">
           <Image alt="Le Campus Paris Logo" className="h-9 w-auto" src="/assets/logo.png" width={140} height={36} priority />
         </div>
-        <div className="hidden md:flex gap-12 nav-link uppercase">
+        {/* Nav complète dès 960px : en dessous, les 4 libellés + logo + CTA
+            ne tiennent pas sur une ligne, on bascule sur le menu burger. */}
+        <div className="hidden min-[960px]:flex gap-6 xl:gap-12 nav-link uppercase whitespace-nowrap">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (
@@ -42,7 +44,7 @@ export default function Header() {
         </div>
         <div className="flex items-center gap-4">
           <button
-            className="magnetic glass-blue hidden md:inline-block text-white px-6 py-2.5 rounded-full nav-cta transition-transform hover:scale-105 active:scale-95"
+            className="magnetic glass-blue hidden min-[960px]:inline-block text-white px-6 py-2.5 rounded-full nav-cta whitespace-nowrap transition-transform hover:scale-105 active:scale-95"
             type="button"
             data-open-contact-modal=""
           >
@@ -50,7 +52,7 @@ export default function Header() {
           </button>
           <button
             id="menu-toggle"
-            className="header-text md:hidden flex items-center justify-center w-11 h-11"
+            className="header-text min-[960px]:hidden flex items-center justify-center w-11 h-11"
             aria-label="Ouvrir le menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -62,7 +64,7 @@ export default function Header() {
       {/* Panneau mobile */}
       <div
         id="mobile-menu"
-        className={`${menuOpen ? '' : 'hidden'} md:hidden border-t border-stone bg-[#f8f9ff] px-margin-mobile py-stack-md`}
+        className={`${menuOpen ? '' : 'hidden'} min-[960px]:hidden border-t border-stone bg-[#f8f9ff] px-margin-mobile py-stack-md`}
       >
         <div className="flex flex-col gap-4 nav-link uppercase">
           {NAV_LINKS.map((link) => {
