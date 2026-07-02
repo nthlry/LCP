@@ -6,7 +6,7 @@ import SectionTitle from '@/components/SectionTitle';
 export const metadata: Metadata = {
   title: 'Notre constat — Le Campus Paris',
   description:
-    "IA, nouveaux métiers, explosion des formations, besoin de flexibilité : le monde de l'éducation change plus vite que ses infrastructures. Le Campus Paris est la réponse.",
+    "IA, nouveaux métiers, croissance des formations, besoin de flexibilité : le monde de l'éducation change plus vite que ses infrastructures. Le Campus Paris est la réponse.",
   alternates: { canonical: 'https://le-campus-paris.fr/notre-constat' },
   openGraph: {
     type: 'website',
@@ -32,7 +32,7 @@ const FORCES = [
   },
   {
     icon: 'trending_up',
-    title: 'Une explosion des formations',
+    title: 'Une croissance des formations',
     text: "Écoles, organismes, formats hybrides : l'offre de formation se multiplie et se réinvente sans cesse.",
   },
   {
@@ -59,7 +59,13 @@ export default function NotreConstatPage() {
         {/* Aujourd'hui — les 4 forces */}
         <section className="py-2xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="mb-xl">
-            <SectionTitle as="h2" tone="light" className="text-headline-lg" lead="Aujourd'hui" rest="tout s'accélère" />
+            <SectionTitle
+              as="h2"
+              tone="light"
+              className="text-headline-lg"
+              lead="Le monde professionnel"
+              rest="d'aujourd'hui et de demain est en pleine transformation"
+            />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter" data-stagger="up">
             {FORCES.map((f) => (
@@ -70,11 +76,20 @@ export default function NotreConstatPage() {
               </div>
             ))}
           </div>
+          <div className="mt-xl max-w-[46rem] space-y-4">
+            <p className="font-body-lg text-body-lg text-on-surface-variant">
+              Ces mutations imposent une nouvelle exigence : pouvoir tester, grandir, s&apos;adapter, vite. Or
+              l&apos;immobilier éducatif classique n&apos;a pas suivi.
+            </p>
+            <p className="font-body-lg text-body-lg text-on-surface-variant">
+              Pour accompagner ce changement, nous avons créé Le Campus Paris : le premier lieu de formation conçu pour
+              bouger aussi vite que les métiers qu&apos;il forme.
+            </p>
+          </div>
         </section>
 
         {/* Donc → Le Campus Paris */}
         <section className="py-3xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
-          <span className="font-label-sm uppercase tracking-widest text-accent-blue mb-4 block">Donc</span>
           <SectionTitle
             as="h2"
             tone="light"

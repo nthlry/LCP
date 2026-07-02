@@ -11,9 +11,9 @@ const SERVICES = [
   { icon: 'concierge', label: 'Accueil' },
   { icon: 'build', label: 'Maintenance' },
   { icon: 'dns', label: 'IT' },
-  { icon: 'restaurant', label: 'F&B' },
+  { icon: 'restaurant', label: 'Food & Beverage' },
   { icon: 'local_cafe', label: 'Barista' },
-  { icon: 'spa', label: 'Wellness' },
+  { icon: 'spa', label: 'Espace wellness' },
 ];
 
 function Arrow() {

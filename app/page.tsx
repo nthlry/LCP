@@ -135,7 +135,7 @@ export default function ConceptPage() {
                 <p className="font-label-md uppercase tracking-widest text-on-surface-variant">De rooftop</p>
               </div>
               <div className="col-span-2 lg:col-span-1">
-                <p className="font-title-lg text-title-lg leading-tight">
+                <p className="font-title-lg text-title-lg leading-tight uppercase">
                   Premier campus opéré <span className="text-accent-blue">de France</span>
                 </p>
               </div>
