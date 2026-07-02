@@ -60,9 +60,6 @@ export default function Footer() {
         <div className="py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <span className="text-white/60 text-sm">© 2026 Le Campus Paris. Tous droits réservés.</span>
           <div className="flex gap-4">
-            <a href="#" aria-label="Partager">
-              <span className="material-symbols-outlined text-white/60 hover:text-white cursor-pointer transition-colors">share</span>
-            </a>
             <a href="mailto:contact@lecampus-paris.fr" aria-label="Email">
               <span className="material-symbols-outlined text-white/60 hover:text-white cursor-pointer transition-colors">mail</span>
             </a>
