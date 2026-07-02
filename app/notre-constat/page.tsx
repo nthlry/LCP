@@ -78,12 +78,12 @@ export default function NotreConstatPage() {
           </div>
           <div className="mt-xl max-w-[46rem] space-y-4">
             <p className="font-body-lg text-body-lg text-on-surface-variant">
-              Ces mutations imposent une nouvelle exigence : pouvoir tester, grandir, s&apos;adapter, vite. Or
-              l&apos;immobilier éducatif classique n&apos;a pas suivi.
+              Ces transformations profondes imposent une nouvelle exigence aux acteurs de l&apos;éducation et de la
+              formation : pouvoir expérimenter de nouveaux formats, se développer et s&apos;adapter rapidement.
             </p>
             <p className="font-body-lg text-body-lg text-on-surface-variant">
-              Pour accompagner ce changement, nous avons créé Le Campus Paris : le premier lieu de formation conçu pour
-              bouger aussi vite que les métiers qu&apos;il forme.
+              Pour y répondre, nous avons créé Le Campus Paris : le premier campus opéré pensé pour évoluer au même
+              rythme que les métiers qu&apos;il forme.
             </p>
           </div>
         </section>
