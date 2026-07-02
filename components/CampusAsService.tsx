@@ -11,7 +11,8 @@ const SERVICES = [
   { icon: 'concierge', label: 'Accueil' },
   { icon: 'build', label: 'Maintenance' },
   { icon: 'dns', label: 'IT' },
-  { icon: 'restaurant', label: 'Restauration' },
+  { icon: 'restaurant', label: 'F&B' },
+  { icon: 'local_cafe', label: 'Barista' },
   { icon: 'spa', label: 'Wellness' },
 ];
 
@@ -55,7 +56,7 @@ export default function CampusAsService() {
           <Arrow />
 
           {/* Les services opérés */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4" data-stagger="up">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4" data-stagger="up">
             {SERVICES.map((s) => (
               <div key={s.label} className="rounded-xl border border-white/10 bg-white/5 p-5 text-center">
                 <span className="material-symbols-outlined text-3xl text-accent-blue mb-2 block">{s.icon}</span>

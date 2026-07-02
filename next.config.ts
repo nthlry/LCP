@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      // Ancienne URL de la page « Notre constat »
+      { source: '/pourquoi-maintenant', destination: '/notre-constat', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

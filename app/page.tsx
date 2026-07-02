@@ -117,26 +117,26 @@ export default function ConceptPage() {
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-gutter items-center text-center">
               <div className="space-y-2">
-                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-secondary leading-none">
+                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-accent-blue leading-none">
                   <span data-counter="2200">0</span>
                 </p>
                 <p className="font-label-md uppercase tracking-widest text-on-surface-variant">Étudiants</p>
               </div>
               <div className="space-y-2">
-                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-secondary leading-none">
+                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-accent-blue leading-none">
                   <span data-counter="8600" data-counter-suffix=" m²">0</span>
                 </p>
                 <p className="font-label-md uppercase tracking-widest text-on-surface-variant">Opérés</p>
               </div>
               <div className="space-y-2">
-                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-secondary leading-none">
+                <p className="font-headline-2xl text-headline-lg md:text-headline-xl text-accent-blue leading-none">
                   <span data-counter="400" data-counter-suffix=" m²">0</span>
                 </p>
                 <p className="font-label-md uppercase tracking-widest text-on-surface-variant">De rooftop</p>
               </div>
               <div className="col-span-2 lg:col-span-1">
                 <p className="font-title-lg text-title-lg leading-tight">
-                  Premier campus opéré <span className="text-secondary">de France</span>
+                  Premier campus opéré <span className="text-accent-blue">de France</span>
                 </p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function ConceptPage() {
                     l&apos;exploitation, les services et toute la complexité quotidienne d&apos;un campus.
                   </p>
                   <p className="font-body-lg text-body-lg text-on-surface-variant mb-4">
-                    Le savoir évolue en permanence. Les infrastructures actuelles, beaucoup moins.
+                    Les méthodes d&apos;apprentissage évoluent en permanence. Les infrastructures actuelles, beaucoup moins.
                   </p>
                   <p className="font-headline-md text-headline-md text-accent-blue mt-12 uppercase">LE CAMPUS PARIS EST DIFFÉRENT.</p>
                   <p className="font-body-md text-on-surface-variant mt-6 leading-relaxed">
@@ -291,10 +291,10 @@ export default function ConceptPage() {
                     Chaque détail est pensé pour minimiser les distractions. De l&apos;acoustique traitée aux mobiliers ergonomiques, nous
                     créons l&apos;environnement idéal pour la transmission du savoir.
                   </p>
-                  <a className="inline-flex items-center gap-2 font-label-md text-accent-blue group" href="#">
-                    En savoir plus sur nos services
+                  <Link className="inline-flex items-center gap-2 font-label-md text-accent-blue group" href="/espaces">
+                    En savoir plus sur nos espaces
                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -309,7 +309,7 @@ export default function ConceptPage() {
               className="magnetic glass-blue text-white px-12 py-5 rounded-full font-label-md hover:scale-105 transition-all"
               data-open-contact-modal=""
             >
-              Prendre rendez-vous avec un conseiller
+              Nous contacter
             </button>
           </div>
         </section>

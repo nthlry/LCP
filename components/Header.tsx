@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { href: '/', label: 'Le concept' },
-  { href: '/pourquoi-maintenant', label: 'Pourquoi maintenant' },
+  { href: '/notre-constat', label: 'Notre constat' },
   { href: '/espaces', label: 'Les espaces' },
   { href: '/infos-pratiques', label: 'Informations pratiques' },
 ];

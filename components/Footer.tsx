@@ -25,8 +25,8 @@ export default function Footer() {
             <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/">
               Le concept
             </Link>
-            <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/pourquoi-maintenant">
-              Pourquoi maintenant
+            <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/notre-constat">
+              Notre constat
             </Link>
             <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/espaces">
               Les espaces
@@ -37,13 +37,13 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-4">
             <h4 className="font-label-md uppercase mb-2">Légal</h4>
-            <a className="text-white/70 hover:text-white hover:underline transition-all" href="#">
+            <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/mentions-legales">
               Mentions Légales
-            </a>
-            <a className="text-white/70 hover:text-white hover:underline transition-all" href="#">
+            </Link>
+            <Link className="text-white/70 hover:text-white hover:underline transition-all" href="/mentions-legales#confidentialite">
               Politique de Confidentialité
-            </a>
-            <a className="text-white/70 hover:text-white hover:underline transition-all" href="#">
+            </Link>
+            <a className="text-white/70 hover:text-white hover:underline transition-all" href="/sitemap.xml">
               Plan du site
             </a>
           </div>

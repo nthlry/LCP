@@ -70,7 +70,7 @@ export default function InfosPratiquesPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1 bg-secondary-container/10 text-secondary rounded-full border border-secondary/20 mb-md">
             <span className="font-label-md uppercase tracking-widest">Infos pratiques</span>
           </div>
-          <h1 className="font-headline-2xl text-headline-lg-mobile md:text-headline-2xl leading-tight max-w-[48rem]">
+          <h1 className="font-headline-2xl text-headline-lg-mobile md:text-headline-2xl leading-tight max-w-[48rem] uppercase">
             Un campus aux portes de Paris, <span className="text-secondary">parfaitement connecté.</span>
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-[42rem] mt-md">
@@ -137,7 +137,7 @@ export default function InfosPratiquesPage() {
                 <h3 className="font-title-lg text-title-lg mb-4">Transports en commun</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-on-surface-variant font-body-md">
-                    <span className="material-symbols-outlined text-secondary text-[20px] shrink-0">train</span> RER A —
+                    <span className="material-symbols-outlined text-secondary text-[20px] shrink-0">train</span> RER A :
                     Nanterre-Préfecture, à 450 m (6 min à pied)
                   </li>
                   <li className="flex items-start gap-3 text-on-surface-variant font-body-md">
