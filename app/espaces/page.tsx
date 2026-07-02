@@ -155,7 +155,7 @@ export default function EspacesPage() {
               <div className="w-full md:w-1/2 overflow-hidden aspect-video md:aspect-auto md:min-h-[280px]">
                 <img
                   src="/assets/rez-de-chaussee.webp"
-                  alt="Hall d'accueil du rez-de-chaussée"
+                  alt="Cafétéria et brasserie du rez-de-chaussée"
                   className="w-full h-full object-cover transition-all duration-700"
                 />
               </div>
@@ -181,7 +181,7 @@ export default function EspacesPage() {
                 <div className="overflow-hidden aspect-video">
                   <img
                     src="/assets/premier-etage.webp"
-                    alt="Premier Étage Interior"
+                    alt="Auditorium du premier étage mutualisé"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
